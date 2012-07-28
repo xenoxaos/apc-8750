@@ -1,4 +1,4 @@
-#As it's configured, the master branch builds both uImage, modules, and u-boot. 
+#As it's configured, the master branch builds uImage, modules, and u-boot. 
 
 There are no video/audio drivers compiled in, but networking and usb should function properly.
 
