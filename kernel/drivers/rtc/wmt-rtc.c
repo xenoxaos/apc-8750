@@ -278,7 +278,8 @@ wmt_rtc_interrupt(int irq, void *dev_id)
 	if (rtis & RTIS_UPDATE)
 		events |= (RTC_UF|RTC_IRQF);
 
-	rtc_update_irq(wmt_rtc, 1, events);         /* in rtctime.c */
+	if (wmt_rtc)
+		rtc_update_irq(wmt_rtc, 1, events); /* in rtctime.c */
 
 	if ((rtis & RTIS_ALARM) && rtc_periodic_alarm(&rtc_alarm))
 		wmt_set_alarm(&rtc_alarm);   /* in rtctime.c */
